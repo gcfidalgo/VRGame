@@ -8,6 +8,9 @@ public class ScramblerMotion : MonoBehaviour
     private AudioSource myAudioSource;
     private MeshRenderer myMeshRenderer;
     private CapsuleCollider myCapsuleCollider;
+
+    public NavRoomManager room;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class ScramblerMotion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        room.scramble = true; 
         myAudioSource.Play();
         myMeshRenderer.enabled = false;
         myCapsuleCollider.enabled = false;
