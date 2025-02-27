@@ -9,10 +9,11 @@ public class PortalTeleporter : MonoBehaviour {
 
 	private bool playerIsOverlapping = false;
 
-	public bool reverse = false; 
+	public bool reverse = false;
+    public bool forward = false;
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 		if (playerIsOverlapping)
 		{
 			Vector3 portalToPlayer = player.position - transform.position;
@@ -27,12 +28,12 @@ public class PortalTeleporter : MonoBehaviour {
 
 				if(reverse)
 				{
-					rotationDiff += 180;
+					rotationDiff += -180;
 
 				}
-				else
+				else if(!forward)
 				{
-                    rotationDiff += -180;
+                    rotationDiff += 180;
                 }
 
                 player.Rotate(Vector3.up, rotationDiff);

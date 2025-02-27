@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PortalTest.unity
     guid: 1f1249b809b8fb14394840d4df801c84
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 3c115f7bccbff654591c4e6a55aff7c5
   m_configObjects:

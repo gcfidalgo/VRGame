@@ -5,7 +5,7 @@ using UnityEngine;
 public class GearScramblerMotion : MonoBehaviour
 {
     private Vector3 myStartPosition;
-    //private AudioSource myAudioSource;
+    private AudioSource myAudioSource;
     private MeshRenderer myMeshRenderer;
     private CapsuleCollider myCapsuleCollider;
 
@@ -17,7 +17,7 @@ public class GearScramblerMotion : MonoBehaviour
     void Start()
     {
         myStartPosition = transform.position;
-        //myAudioSource = GetComponent<AudioSource>();
+        myAudioSource = GetComponent<AudioSource>();
         myMeshRenderer = GetComponent<MeshRenderer>();
         myCapsuleCollider = GetComponent<CapsuleCollider>();
 
@@ -32,12 +32,15 @@ public class GearScramblerMotion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //myAudioSource.Play();
-        //myMeshRenderer.enabled = false;
-        myCapsuleCollider.enabled = false;
-        myStartPosition = key_place.transform.position + new Vector3(0.0f, 1.1f, 0.0f);
-        transform.rotation = Quaternion.identity;
-        room.num_keys++; 
+        if (other.tag == "Player")
+        {
+            myAudioSource.Play();
+            //myMeshRenderer.enabled = false;
+            myCapsuleCollider.enabled = false;
+            myStartPosition = key_place.transform.position + new Vector3(0.0f, 1.1f, 0.0f);
+            transform.rotation = Quaternion.identity;
+            room.num_keys++;
+        }
     }
 }
 

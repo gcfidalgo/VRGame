@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScramblerMotion : MonoBehaviour
 {
     private Vector3 myStartPosition;
-    //private AudioSource myAudioSource;
+    private AudioSource myAudioSource;
     private MeshRenderer myMeshRenderer;
     private CapsuleCollider myCapsuleCollider;
 
@@ -15,7 +15,7 @@ public class ScramblerMotion : MonoBehaviour
     void Start()
     {
         myStartPosition = transform.position;
-        //myAudioSource = GetComponent<AudioSource>();
+        myAudioSource = GetComponent<AudioSource>();
         myMeshRenderer = GetComponent<MeshRenderer>();
         myCapsuleCollider = GetComponent<CapsuleCollider>();
     }
@@ -29,10 +29,15 @@ public class ScramblerMotion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        room.scramble = true; 
-        //myAudioSource.Play();
-        myMeshRenderer.enabled = false;
-        myCapsuleCollider.enabled = false;
+        if (other.tag == "Player")
+        {
+            room.scramble = true;
+            myAudioSource.Play();
+            myMeshRenderer.enabled = false;
+            myCapsuleCollider.enabled = false;
+        }
+
+        
     }
 }
 
