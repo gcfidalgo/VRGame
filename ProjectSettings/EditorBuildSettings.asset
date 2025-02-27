@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Navigation.unity
     guid: 5e57f37c5fd77e542894a960f8e164d2
+  - enabled: 0
+    path: Assets/Scenes/PortalTest.unity
+    guid: 1f1249b809b8fb14394840d4df801c84
   - enabled: 1
-    path: Assets/Scenes/Sounds.unity
-    guid: 86715850f0e56d9468b29b6b705ef856
+    path: Assets/Scenes/Lobby.unity
+    guid: 3c115f7bccbff654591c4e6a55aff7c5
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3a328ca7afc3d5847814f64a1390c9e2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: db01d7fe7420f904cb099cc9a1264d00, type: 2}

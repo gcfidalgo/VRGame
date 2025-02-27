@@ -5,14 +5,17 @@ using UnityEngine;
 public class ScramblerMotion : MonoBehaviour
 {
     private Vector3 myStartPosition;
-    private AudioSource myAudioSource;
+    //private AudioSource myAudioSource;
     private MeshRenderer myMeshRenderer;
     private CapsuleCollider myCapsuleCollider;
+
+    public NavRoomManager room;
+
     // Start is called before the first frame update
     void Start()
     {
         myStartPosition = transform.position;
-        myAudioSource = GetComponent<AudioSource>();
+        //myAudioSource = GetComponent<AudioSource>();
         myMeshRenderer = GetComponent<MeshRenderer>();
         myCapsuleCollider = GetComponent<CapsuleCollider>();
     }
@@ -24,9 +27,10 @@ public class ScramblerMotion : MonoBehaviour
         transform.Rotate(Vector3.back * 50 * Time.deltaTime, Space.Self);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        myAudioSource.Play();
+        room.scramble = true; 
+        //myAudioSource.Play();
         myMeshRenderer.enabled = false;
         myCapsuleCollider.enabled = false;
     }
