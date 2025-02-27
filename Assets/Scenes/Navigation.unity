@@ -565,6 +565,7 @@ GameObject:
   - component: {fileID: 197068536}
   - component: {fileID: 197068535}
   - component: {fileID: 197068538}
+  - component: {fileID: 197068539}
   m_Layer: 0
   m_Name: Key Gear 01
   m_TagString: Untagged
@@ -674,6 +675,24 @@ CapsuleCollider:
   m_Height: 0.02921182
   m_Direction: 1
   m_Center: {x: -0.0000126268715, y: -0.000010862481, z: -0.000010696705}
+--- !u!114 &197068539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197068533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a042e21c151c487499694db7da113edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &209868702
 GameObject:
   m_ObjectHideFlags: 0

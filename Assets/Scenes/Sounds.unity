@@ -2238,6 +2238,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7757746928102727592, guid: 2c4f38b432b155a4cb5632c1ae14d827, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.02572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757746928102727592, guid: 2c4f38b432b155a4cb5632c1ae14d827, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757746928102727592, guid: 2c4f38b432b155a4cb5632c1ae14d827, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.88
+      objectReference: {fileID: 0}
     - target: {fileID: 8970124148903936402, guid: 2c4f38b432b155a4cb5632c1ae14d827, type: 3}
       propertyPath: m_Name
       value: Narrative Cues
