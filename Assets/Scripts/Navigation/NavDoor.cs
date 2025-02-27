@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class NavDoor : MonoBehaviour
 {
+    [SerializeField] GameObject nextPlane;    
+    
     public NavRoomManager room;
-    private bool win = false;
+    public bool win = false;
     public float door_time = 3f;
     public float timer = 0f;
 
-    public float speed = 120f / 3f; 
+    public float speed = 120f / 3f;
+
+    private void Start()
+    {
+        nextPlane.SetActive(false);
+    }
 
     private void Update()
     {
         if(win && timer + Time.deltaTime < door_time)
         {
             transform.Rotate(0f, speed * Time.deltaTime, 0f);
-            timer += Time.deltaTime; 
+            timer += Time.deltaTime;
+            
         }
     }
 
@@ -26,6 +34,7 @@ public class NavDoor : MonoBehaviour
         {
             speed = 120f / door_time;
             win = true;
+            nextPlane.SetActive(true);
         }
     }
 }

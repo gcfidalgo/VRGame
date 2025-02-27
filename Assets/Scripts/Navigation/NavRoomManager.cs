@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NavRoomManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class NavRoomManager : MonoBehaviour
     public float timer = 0f;
 
     public float scramble_timer = 0f;
-    public float scram_time = 10f; 
+    public float scram_time = 5f; 
     public bool scramble = false;
 
     public int num_keys = 0; 
@@ -72,10 +73,7 @@ public class NavRoomManager : MonoBehaviour
 
     private void GameLose()
     {
-        player.transform.position = player_start.position;
-        timer = 0f;
-        hour_hand.transform.rotation = hour_init_rot;
-        minute_hand.transform.rotation = min_init_rot;
+        SceneManager.LoadScene("Lobby"); 
     }
 
     public bool GameWin()
