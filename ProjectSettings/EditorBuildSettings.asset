@@ -18,5 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 3c115f7bccbff654591c4e6a55aff7c5
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: aa1e2fea5184a41468db9bf50547fa20, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3a328ca7afc3d5847814f64a1390c9e2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: db01d7fe7420f904cb099cc9a1264d00, type: 2}
