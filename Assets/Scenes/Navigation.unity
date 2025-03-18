@@ -1761,7 +1761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79411e0a59442b842afc75da0faccd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1347098305}
   hour_hand: {fileID: 490775895}
   minute_hand: {fileID: 213035502}
   game_time: 330
@@ -1920,7 +1919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc688897dd30b634fabb8930feaa6a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Lobby
+  SceneName: Interaction
 --- !u!65 &643737197
 BoxCollider:
   m_ObjectHideFlags: 0

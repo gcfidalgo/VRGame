@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class NavRoomManager : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    private Transform player_start;
-
+    
     [SerializeField] GameObject hour_hand;
     [SerializeField] GameObject minute_hand;
-    private Quaternion hour_init_rot;
-    private Quaternion min_init_rot;
     private float hour_speed;
     private float min_speed;
 
@@ -28,10 +24,6 @@ public class NavRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player_start = player.transform;
-        hour_init_rot = hour_hand.transform.rotation;
-        min_init_rot = minute_hand.transform.rotation;
-
         min_speed = 360f / game_time;
         hour_speed = 27f / game_time; 
     }
