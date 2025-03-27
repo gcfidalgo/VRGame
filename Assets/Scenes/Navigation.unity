@@ -602,6 +602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key_place: {fileID: 209868702}
+  leftController: {fileID: 657587628}
+  rightController: {fileID: 1640130871}
   room: {fileID: 641024007}
 --- !u!23 &197068536
 MeshRenderer:
@@ -1901,7 +1903,7 @@ Transform:
   m_GameObject: {fileID: 643737194}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000029802322, y: -1, z: -0.000000029802322, w: 0}
-  m_LocalPosition: {x: -0.577, y: 1.393, z: -0.16}
+  m_LocalPosition: {x: -0.577, y: 1.393, z: 0.026}
   m_LocalScale: {x: 1.2251999, y: 2.77716, z: 0.078499995}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1939,8 +1941,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.092762, y: 1, z: 3.3436248}
+  m_Center: {x: 0.046380658, y: 0, z: -1.1718124}
 --- !u!33 &643737198
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4998,6 +5000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8b4755d54df140bbe8f0c6cbf226b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 657587628}
+  rightController: {fileID: 1640130871}
   room: {fileID: 641024007}
 --- !u!136 &1565898791
 CapsuleCollider:
@@ -5216,6 +5220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8b4755d54df140bbe8f0c6cbf226b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 657587628}
+  rightController: {fileID: 1640130871}
   room: {fileID: 641024007}
 --- !u!136 &1612937705
 CapsuleCollider:
@@ -6575,6 +6581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key_place: {fileID: 1523862497}
+  leftController: {fileID: 657587628}
+  rightController: {fileID: 1640130871}
   room: {fileID: 641024007}
 --- !u!23 &1890106706
 MeshRenderer:
@@ -7229,6 +7237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a8b4755d54df140bbe8f0c6cbf226b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 657587628}
+  rightController: {fileID: 1640130871}
   room: {fileID: 641024007}
 --- !u!136 &2117931368
 CapsuleCollider:

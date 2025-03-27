@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GearScramblerMotion : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GearScramblerMotion : MonoBehaviour
     private CapsuleCollider myCapsuleCollider;
 
     [SerializeField] GameObject key_place;
+    [SerializeField] private XRBaseController leftController;
+    [SerializeField] private XRBaseController rightController;
 
     public NavRoomManager room;
 
@@ -40,6 +44,9 @@ public class GearScramblerMotion : MonoBehaviour
             myStartPosition = key_place.transform.position + new Vector3(0.0f, 1.1f, 0.0f);
             transform.rotation = Quaternion.identity;
             room.num_keys++;
+
+            leftController.SendHapticImpulse(0.5f, 0.5f);
+            rightController.SendHapticImpulse(0.5f, 0.5f);
         }
     }
 }

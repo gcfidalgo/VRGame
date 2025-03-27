@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ScramblerMotion : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class ScramblerMotion : MonoBehaviour
     private AudioSource myAudioSource;
     private MeshRenderer myMeshRenderer;
     private CapsuleCollider myCapsuleCollider;
+
+    [SerializeField] private XRBaseController leftController;
+    [SerializeField] private XRBaseController rightController;
 
     public NavRoomManager room;
 
@@ -35,6 +39,9 @@ public class ScramblerMotion : MonoBehaviour
             myAudioSource.Play();
             myMeshRenderer.enabled = false;
             myCapsuleCollider.enabled = false;
+
+            leftController.SendHapticImpulse(0.2f, 0.5f);
+            rightController.SendHapticImpulse(0.2f, 0.5f);
         }
 
         

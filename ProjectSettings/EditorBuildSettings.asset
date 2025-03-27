@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Interaction.unity
-    guid: 703c97fb70d9ad344bb8aef12fe70b4b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 3c115f7bccbff654591c4e6a55aff7c5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Navigation.unity
     guid: 5e57f37c5fd77e542894a960f8e164d2
+  - enabled: 1
+    path: Assets/Scenes/Interaction.unity
+    guid: 703c97fb70d9ad344bb8aef12fe70b4b
+  - enabled: 1
+    path: Assets/Scenes/Haptic.unity
+    guid: 2a452f0d5a24f644195d8426045f9477
   - enabled: 0
     path: Assets/Scenes/PortalTest.unity
     guid: 1f1249b809b8fb14394840d4df801c84
@@ -26,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Interaction2.unity
     guid: a870aa2814852e945bab80b61937163b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HapticTutorial.unity
     guid: 659bbfb270f9a394ea7494447fec19fd
   m_configObjects:

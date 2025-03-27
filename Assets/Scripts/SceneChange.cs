@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
-{   
-    public string SceneName = " ";
+{
+    [SerializeField] public string SceneName = " ";
 
     private void OnTriggerEnter(Collider other)
     {

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.SceneManagement;
+
 
 public class InteractionRoomManager : MonoBehaviour
 {
@@ -65,5 +67,4 @@ public class InteractionRoomManager : MonoBehaviour
         
     }
 
- 
 }
