@@ -8,6 +8,7 @@ public class PendulumRot : MonoBehaviour
     public float maxAngle = 45f;
     public float minAngle = -45f;
     private float phaseOffset = 0f;
+    [SerializeField] private NPCHaptic npc; 
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,16 @@ public class PendulumRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float temp = swingSpeed; 
+        if(npc.slow)
+        {
+            swingSpeed = 0f; 
+        }
+
         float normalizedSin = (Mathf.Sin(Time.time * swingSpeed + phaseOffset) + 1f) / 2f;
         float angle = Mathf.Lerp(minAngle, maxAngle, normalizedSin);
         transform.localRotation = Quaternion.Euler(0, 0, angle);
+
+        swingSpeed = temp; 
     }
 }

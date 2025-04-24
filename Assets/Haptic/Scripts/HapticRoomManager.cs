@@ -7,6 +7,8 @@ public class HapticRoomManager : MonoBehaviour
 {
     [SerializeField] GameObject hour_hand;
     [SerializeField] GameObject minute_hand;
+    [SerializeField] GameObject hour_hand_ui;
+    [SerializeField] GameObject minute_hand_ui;
     private float hour_speed;
     private float min_speed;
 
@@ -32,6 +34,9 @@ public class HapticRoomManager : MonoBehaviour
             timer += Time.deltaTime;
             minute_hand.transform.Rotate(0f, -1 * min_speed * Time.deltaTime, 0f);
             hour_hand.transform.Rotate(0f, hour_speed * Time.deltaTime * -1, 0f);
+
+            minute_hand_ui.transform.Rotate(0f, min_speed * Time.deltaTime, 0f);
+            hour_hand_ui.transform.Rotate(0f, hour_speed * Time.deltaTime * -1, 0f);
         }
     }
 

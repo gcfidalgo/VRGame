@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Haptic.unity
     guid: 2a452f0d5a24f644195d8426045f9477
   - enabled: 0
@@ -32,9 +32,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HapticTutorial.unity
     guid: 659bbfb270f9a394ea7494447fec19fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NPCTest.unity
     guid: b98faee398209b541a5f2e07231fcd55
+  - enabled: 0
+    path: Assets/Scenes/Passthrough.unity
+    guid: 3598293aeb054b4429beb71764720a06
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: aa1e2fea5184a41468db9bf50547fa20, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3a328ca7afc3d5847814f64a1390c9e2, type: 2}
