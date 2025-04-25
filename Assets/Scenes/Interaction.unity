@@ -612,9 +612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoge: {fileID: 41924793}
   textbox: {fileID: 41924792}
-  xrorigin: {fileID: 1347098305}
   wallPlace: {fileID: 598362398}
-  display_time: 20
+  display_time: 10
   timer: 0
   print1: 0
   print2: 0
@@ -12389,7 +12388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hour_hand: {fileID: 148382837}
   minute_hand: {fileID: 358931709}
-  game_time: 330
+  game_time: 400
   timer: 0
   Door: {fileID: 939572597}
   nextPlane: {fileID: 962435049}

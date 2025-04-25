@@ -12,22 +12,11 @@ public class NPCHaptic : MonoBehaviour
 
     public float display_time = 10f;
     public float timer = 0f;
-    public float timer2 = 0f;
     public bool slow = false; 
 
     // Update is called once per frame
     void Update()
     {
-        if (timer2 + Time.deltaTime >= 5.0f)
-        {
-            slow = false;
-        }
-        else
-        {
-            timer2 += Time.deltaTime;
-
-        }
-
         if (timer + Time.deltaTime >= display_time)
         {
             textbox.SetActive(false);

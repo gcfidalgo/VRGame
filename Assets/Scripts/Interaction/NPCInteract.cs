@@ -11,7 +11,6 @@ public class NPCInteract : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI dialoge;
     [SerializeField] private GameObject textbox;
-    [SerializeField] private GameObject xrorigin;
     [SerializeField] private WallGearManager wallPlace; 
 
     public float display_time = 10f;
@@ -38,10 +37,6 @@ public class NPCInteract : MonoBehaviour
             timer += Time.deltaTime;
 
         }
-
-        Vector3 pos = xrorigin.transform.position;
-        transform.position = new Vector3(pos.x + 1.5f, pos.y, pos.z + 1.5f);
-
     }
 
     public void LookedBlue(bool first)
@@ -68,20 +63,20 @@ public class NPCInteract : MonoBehaviour
             dialoge.text = "Fix the mechanism to get the key"; 
 
         } 
-        else if (!wallPlace.place1 && !wallPlace.place2 && !wallPlace.place3)
-        {
-            dialoge.text = "The key mechanism uses gold gears. They vibrate differently"; 
-        }
         else if(print1 && print2)
         {
             dialoge.text = "Follow the instructions on the revealed blueprints. Press the Grab button to grab the gears and drawers.";
 
         }
-        else
+        else if(!print1 && !print2)
         {
             dialoge.text = "Look at the eye icon on the table."; 
         }
-        
+        else if (!wallPlace.place1 && !wallPlace.place2 && !wallPlace.place3)
+        {
+            dialoge.text = "The key mechanism uses gold gears. They vibrate differently";
+        }
+
         textbox.SetActive(true);
         timer = 0f;
     }

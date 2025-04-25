@@ -1946,7 +1946,7 @@ MonoBehaviour:
   minute_hand: {fileID: 213035502}
   hour_hand_ui: {fileID: 1353688780}
   minute_hand_ui: {fileID: 129115608}
-  game_time: 330
+  game_time: 400
   timer: 0
   scramble_timer: 0
   scram_time: 10

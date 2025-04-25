@@ -1047,6 +1047,8 @@ MonoBehaviour:
   maxAngle: 45
   minAngle: -45
   npc: {fileID: 1395596704}
+  display_time: 10
+  timer: 0
 --- !u!1 &590704412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2081,8 @@ MonoBehaviour:
   maxAngle: 45
   minAngle: -45
   npc: {fileID: 1395596704}
+  display_time: 10
+  timer: 0
 --- !u!1 &1016144185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,7 +3360,6 @@ MonoBehaviour:
   xrorigin: {fileID: 946109747}
   display_time: 10
   timer: 0
-  timer2: 0
   slow: 0
 --- !u!1 &1458139508
 GameObject:
@@ -3407,6 +3410,8 @@ MonoBehaviour:
   maxAngle: 45
   minAngle: -45
   npc: {fileID: 1395596704}
+  display_time: 10
+  timer: 0
 --- !u!1 &1523224469
 GameObject:
   m_ObjectHideFlags: 0
@@ -6185,6 +6190,8 @@ MonoBehaviour:
   maxAngle: 45
   minAngle: -45
   npc: {fileID: 1395596704}
+  display_time: 10
+  timer: 0
 --- !u!1 &1933655183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6378,6 +6385,8 @@ MonoBehaviour:
   maxAngle: 45
   minAngle: -45
   npc: {fileID: 1395596704}
+  display_time: 10
+  timer: 0
 --- !u!1 &1943498363
 GameObject:
   m_ObjectHideFlags: 0

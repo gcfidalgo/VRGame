@@ -49,4 +49,32 @@ public class ClockManager : MonoBehaviour
             place6 = true;
         }
     }
+
+    public void ResetPiecePlace(int i)
+    {
+        if (i == 1)
+        {
+            place1 = false;
+        }
+        else if (i == 2)
+        {
+            place2 = false;
+        }
+        else if (i == 3)
+        {
+            place3 = false;
+        }
+        else if (i == 4)
+        {
+            place4 = false;
+        }
+        else if (i == 5)
+        {
+            place5 = false;
+        }
+        else if (i == 6)
+        {
+            place6 = false;
+        }
+    }
 }

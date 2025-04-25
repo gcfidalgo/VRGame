@@ -11,12 +11,14 @@ public class ClockPlaces : MonoBehaviour
     [SerializeField] public int piecePlace = 0;
 
     private Quaternion start_rot;
+    private Vector3 start_pos; 
     private bool isPlaced = false;
 
     // Start is called before the first frame update
     void Start()
     {
         start_rot = piece.transform.rotation; 
+        start_pos = piece.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +28,7 @@ public class ClockPlaces : MonoBehaviour
             piece.GetComponent<XRGrabInteractable>().enabled = false;
             piece.transform.position = transform.position;
             piece.transform.rotation = start_rot;
+
             isPlaced = true;
 
             Rigidbody rb = piece.GetComponent<Rigidbody>();
@@ -39,5 +42,24 @@ public class ClockPlaces : MonoBehaviour
 
             placeManager.SetPiecePlace(piecePlace);
         }
+    }
+
+    public void ResetPiece()
+    {   
+        isPlaced = false;
+        placeManager.ResetPiecePlace(piecePlace);
+
+        Rigidbody rb = piece.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = false; 
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        piece.transform.position = start_pos;
+        piece.transform.rotation = start_rot;
+
+        piece.GetComponent<XRGrabInteractable>().enabled = true;
+        piece.tag = "NotFound"; 
     }
 }
