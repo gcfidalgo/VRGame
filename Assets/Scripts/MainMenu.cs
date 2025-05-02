@@ -3,26 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChange : MonoBehaviour
-{
-    [SerializeField] public string SceneName = " ";
+public class MainMenu : MonoBehaviour
+{   
+    // Start is called before the first frame update
     [SerializeField] GameObject box;
     [SerializeField] Material targetMaterial;
-    [SerializeField] AudioSource[] source;
+    [SerializeField] AudioSource source;
     private float duration = 1.0f;
 
     private Color startColor = new Color(1f, 1f, 1f, 0f);
     private Color endColor = new Color(1f, 1f, 1f, 1f);
-    private bool hit = false; 
+
+    void Start()
+    {
+        box.SetActive(false);
+    }
+
+    public void fadeIn()
+    {
+        StartCoroutine(FadeRoutine());
+    }
 
     private IEnumerator FadeRoutine()
     {
         float elapsedTime = 0;
-
+        
         box.SetActive(true);
-
+       
         targetMaterial.color = startColor;
-        yield return null;
 
         while (elapsedTime < duration)
         {
@@ -30,28 +38,26 @@ public class SceneChange : MonoBehaviour
             float lerp = Mathf.Clamp01(elapsedTime / duration);
 
             targetMaterial.color = Color.Lerp(startColor, endColor, lerp);
-            float inv = 1f - Mathf.Clamp01(elapsedTime / duration);
 
-            for (int i = 0; i < source.Length; i++)
-            {
-                source[i].volume = inv;
-            }
-            
+            float inv = 1f - Mathf.Clamp01(elapsedTime / duration);
+            source.volume = inv;
+
             yield return null;
         }
 
         targetMaterial.color = endColor;
-        SceneManager.LoadScene(SceneName);
         yield return null;
 
+        GameStart();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void GameStart()
     {
-        if (other.tag == "Player" && !hit)
-        {   
-            hit = true;
-            StartCoroutine(FadeRoutine());
-        }  
+        SceneManager.LoadScene("EnterLobby");
+    }
+
+    public void GameQuit() 
+    { 
+        Application.Quit();
     }
 }

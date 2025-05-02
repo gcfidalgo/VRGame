@@ -12,6 +12,8 @@ public class ClockManager : MonoBehaviour
     public bool place6 = false;
 
     [SerializeField] public PassthroughManager roomManager;
+    [SerializeField] public AudioSource source1;
+    [SerializeField] public AudioSource source2;
 
     // Update is called once per frame
     void Update()
@@ -48,6 +50,7 @@ public class ClockManager : MonoBehaviour
         {
             place6 = true;
         }
+        source1.Play();
     }
 
     public void ResetPiecePlace(int i)
@@ -76,5 +79,6 @@ public class ClockManager : MonoBehaviour
         {
             place6 = false;
         }
+        source2.Play();
     }
 }

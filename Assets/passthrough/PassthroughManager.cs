@@ -4,10 +4,12 @@ using Meta;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 
 public class PassthroughManager : MonoBehaviour
 {   
     public bool game_win = false;
+    private bool hit = false;
 
     [SerializeField] GameObject hour_hand;
     [SerializeField] GameObject minute_hand;
@@ -20,6 +22,9 @@ public class PassthroughManager : MonoBehaviour
     [Space]
     [SerializeField] public Camera xrCam; 
     [SerializeField] public OVRPassthroughLayer layer1;
+    [SerializeField] public GameObject uiCanvas;
+    [SerializeField] public GameObject npc;
+    [SerializeField] public AudioSource source; 
 
     private float hour_speed;
     private float min_speed;
@@ -42,9 +47,11 @@ public class PassthroughManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (game_win)
-        {
-            Application.Quit();
+        if (game_win && !hit)
+        {   
+            hit = true;
+            StartCoroutine(GameWin());
+
         }
         else
         {
@@ -67,7 +74,7 @@ public class PassthroughManager : MonoBehaviour
         if(!plane)
         {
             layer1.SetBrightnessContrastSaturation(intensitySlider.GetComponent<Slider>().value, 0f, 0f);
-            //Debug.Log("value changed");
+            //Debug.Log(intensitySlider.GetComponent<Slider>().value);
         }
     }
 
@@ -122,5 +129,34 @@ public class PassthroughManager : MonoBehaviour
 
     }
 
+    private IEnumerator GameWin()
+    {   
+        uiCanvas.SetActive(false);
+        npc.SetActive(false);
+        SwitchPlane();
+        yield return null;
+
+        intensitySlider.GetComponent<Slider>().value = 1f;
+        SetIntensity(0f); 
+
+        float elapsedTime = 0f;
+        float duration = 5f; 
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float lerp = 1f - Mathf.Clamp01(elapsedTime / duration);
+            intensitySlider.GetComponent<Slider>().value = lerp;
+            SetIntensity(0f);
+
+            source.volume = lerp;
+
+            yield return null;
+        }
+        yield return new WaitForSeconds(15f);
+
+        Application.Quit();
+        yield return null;
+    }
 
 }
